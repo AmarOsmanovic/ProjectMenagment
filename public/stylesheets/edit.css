@@ -1,0 +1,592 @@
+:root{
+  --plava: #161d3b;
+  --plava2: #3876BF;
+  --plava3: #2196F3;
+  --narancasta: #fa8c45;
+  --zelena: #5cb85c;
+  --crvena: #d9534f;
+  --bijela: #ffffff;
+  --siva1: #f7f5f4;
+  --siva2: #e1e1e1;
+  --siva3: #939394;
+
+}
+
+
+body {
+  font: 1.5vw "Lucida Grande", Helvetica, Arial, sans-serif !important;
+  background-color: var(--siva2);
+}
+
+
+.navbar {
+  position: absolute;
+  top: 30px;
+  left: 130px;
+  width: calc(100% - 180px);
+  height: fit-content;
+  animation: slideFromTop 2s ease;
+}
+.navbar a {
+  padding-left: 3%;.
+}
+.navbar h1,
+.navbar h4{
+  font-weight: bold;
+  color: var(--plava);
+}
+
+.navbar form {
+  padding-right: 3%;
+}
+.navbar form input{
+  background-color: var(--bijela) !important;
+  border: 1px solid var(--bijela) !important;
+  border-radius: 8px !important;
+  width: 400px !important;
+}
+.navbar form input:active,
+.navbar form input:hover{
+  background-color: var(--bijela) !important;
+  border: 1px solid var(--bijela) !important;
+}
+.navbar form input:focus{
+  outline: 0 !important;
+}
+.navbar form button{
+  background-color: var(--plava) !important;
+  color: var(--bijela) !important;
+  border: none;
+  border-radius: 8px !important;
+}
+.navbar form button:focus{
+  outline: 0 !important;
+}
+.navbarr form input::placeholder{
+  color: var(--siva3) !important;
+}
+.navbar span{
+  background-color: var(--plava) !important;
+  border-radius: 8px;
+}
+.navbar .navbar-toggler {
+  background-color: var(--plava) !important;
+}
+
+
+
+nav .w3-sidebar{
+  display: grid;
+  place-items: center;
+  width: 60px;
+  background-color: var(--plava) !important;
+
+}
+nav .w3-sidebar a:hover{
+  background-color: var(--plava) !important;
+  text-decoration: none;
+}
+nav .w3-sidebar i{
+  color: var(--siva2);
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+nav .w3-sidebar i:hover{
+  color: var(--narancasta);
+}
+nav .active{
+  color: var(--narancasta) !important;
+}
+nav .w3-sidebar #span1 {
+  height: 10rem;
+}
+nav .w3-sidebar #span2 {
+  height: 20rem;
+}
+
+.sticky-top{
+  position: absolute;
+  left: 60px;
+  height: 80px;
+  width: calc(100% - 60px);
+  padding: 0 30px;
+  display: flex;
+  place-items: center;
+  place-content: flex-end;
+}
+.container-fluid{
+  position: absolute;
+  top: 80px;
+  left: 60px;
+  height: fit-content;
+  width: calc(100% - 60px);
+  display: grid;
+}
+.container-fluid section{
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.container-fluid .projects .projectsHeader,
+.container-fluid .tasks .tasksHeader,
+.container-fluid .events .eventsHeader,
+.container-fluid .employees .employeesHeader{
+  height: 50px;
+  margin: 0 50px;
+  display: flex;
+  flex-direction: row;
+  place-content: space-between;
+  place-items: center;
+}
+
+.container-fluid .projects .projectsHeader .left,
+.container-fluid .tasks .tasksHeader .left,
+.container-fluid .events .eventsHeader .left,
+.container-fluid .employees .employeesHeader .left{
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+}
+.container-fluid .projects .projectsHeader .left > *,
+.container-fluid .tasks .tasksHeader .left > *,
+.container-fluid .events .eventsHeader .left > *,
+.container-fluid .employees .employeesHeader .left > *{
+  margin-right: 15px;
+}
+
+
+.container-fluid .projects .projectsHeader .left span{
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: var(--zelena);
+  color: var(--bijela);
+}
+
+.container-fluid .tasks .tasksHeader .left span{
+  padding: 5px 13px;
+  border-radius: 5px;
+  background-color: var(--crvena);
+  color: var(--bijela);
+}
+.container-fluid .events .eventsHeader .left span{
+  padding: 5px 13px;
+  border-radius: 5px;
+  background-color: var(--plava3);
+  color: var(--bijela);
+}
+
+.container-fluid .employees .employeesHeader .left span{
+  padding: 5px 13px;
+  border-radius: 5px;
+  background-color: var(--crvena);
+  color: var(--bijela);
+}
+
+.container-fluid .projects .projectsHeader .left a,
+.container-fluid .tasks .tasksHeader .left a,
+.container-fluid .events .eventsHeader .left a,
+.container-fluid .employees .employeesHeader .left a{
+  color: var(--plava3);
+}
+.container-fluid .projects .projectsHeader .left a:hover,
+.container-fluid .tasks .tasksHeader .left a:hover,
+.container-fluid .events .eventsHeader .left a:hover,
+.container-fluid .employees .employeesHeader .left a:hover{
+  color: var(--plava2);
+  text-decoration: none;
+}
+
+.container-fluid .projects .projectsMain{
+  height: calc(100% - 70px);
+  margin: 20px 50px 0 50px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  grid-template-rows: repeat(auto-fit, minmax(300px, 300px));
+  gap: 2rem;
+
+}
+.container-fluid .projects .projectsMain .addProject,
+.container-fluid .projectsMain .container{
+  display: flex;
+  place-items: center;
+  place-content: center;
+  flex-direction: column;
+  transition: background-color 1s ease;
+
+}
+.container-fluid .projects .projectsMain .addProject:hover {
+  background-color: var(--zelena);
+  cursor: pointer;
+}
+
+.container-fluid .projects .projectsMain .addProject:hover > i{
+  background-color: var(--bijela);
+  color: var(--zelena);
+  transition: background-color 1s ease;
+
+}
+
+.container-fluid .projects .projectsMain .addProject:hover > h3,
+.container-fluid .projects .projectsMain .addProject:hover > h5{
+  color: var(--bijela);
+  transition: background-color 1s ease;
+
+}
+
+.container-fluid .projects .projectsMain .addProject i{
+  font-size: 35px;
+  padding: 28px 30px;
+  border-radius: 50%;
+  color: var(--bijela);
+  background-color: var(--zelena);
+}
+.container-fluid .projects .projectsMain .addProject h5{
+  color: var(--siva3);
+  text-align: center;
+}
+.container-fluid .projects .projectsMain .container{
+  min-height: 300px;
+  margin-right:  30px;
+  border-radius: 15px;
+  background-color: var(--bijela);
+  transition: background-color 1s ease;
+}
+
+
+.container-fluid .projects .projectsMain .editProject i{
+  font-size: 35px;
+  padding: 28px 30px;
+  border-radius: 10px;
+  color: var(--bijela);
+  background-color: var(--plava3);
+  transition: background-color 1s ease;
+
+
+}
+
+.container-fluid .projects .projectsMain .editProject h5{
+  color: var(--siva3);
+  text-align: center;
+  transition: background-color 1s ease;
+
+}
+
+.container-fluid .projects .projectsMain .editProject:hover{
+  background-color: var(--plava3);
+  cursor: pointer;
+}
+
+.container-fluid .projects .projectsMain .editProject:hover i{
+  background-color: var(--bijela);
+  color: var(--plava3);
+}
+
+.container-fluid .projects .projectsMain .editProject:hover h3,
+.container-fluid .projects .projectsMain .editProject:hover h5 {
+  color: var(--bijela);
+}
+
+
+
+
+.modals .newEventModal .modal .modal-dialog,
+.modals .editEventModal .modal .modal-dialog,
+.modals .newProjectModal .modal .modal-dialog,
+.modals .editProjectModal .modal .modal-dialog,
+.modals .newTaskModal .modal .modal-dialog,
+.modals .editTaskModal .modal .modal-dialog,
+.modals .newEmployeeModal .modal .modal-dialog,
+.modals .editEmployeeModal .modal .modal-dialog{
+  height: 80%;
+  margin-top: 70px;
+}
+
+.modals .editEventModal .modal .modal-dialog .modal-content,
+.modals .newEventModal .modal .modal-dialog .modal-content,
+.modals .newProjectModal .modal .modal-dialog .modal-content,
+.modals .editProjectModal .modal .modal-dialog .modal-content,
+.modals .newTaskModal .modal .modal-dialog .modal-content,
+.modals .editTaskModal .modal .modal-dialog .modal-content,
+.modals .newEmployeeModal .modal .modal-dialog .modal-content,
+.modals .editEmployeeModal .modal .modal-dialog .modal-content{
+  height: 100%;
+}
+
+.modals .editEventModal .modal .modal-dialog .modal-content .modal-header,
+.modals .newEventModal .modal .modal-dialog .modal-content .modal-header,
+.modals .newProjectModal .modal .modal-dialog .modal-content .modal-header,
+.modals .editProjectModal .modal .modal-dialog .modal-content .modal-header,
+.modals .newTaskModal .modal .modal-dialog .modal-content .modal-header,
+.modals .editTaskModal .modal .modal-dialog .modal-content .modal-header,
+.modals .editEmployeeModal .modal .modal-dialog .modal-content .modal-body{
+  display: flex;
+  place-items: center;
+}
+
+.modals .editEventModal .modal .modal-dialog .modal-content .modal-body form .formInsert,
+.modals .newEventModal .modal .modal-dialog .modal-content .modal-body form .formInsert,
+.modals .newProjectModal .modal .modal-dialog .modal-content .modal-body form .formInsert,
+.modals .editProjectModal .modal .modal-dialog .modal-content .modal-body form .formInsert,
+.modals .newTaskModal .modal .modal-dialog .modal-content .modal-body form .formInsert,
+.modals .editTaskModal .modal .modal-dialog .modal-content .modal-body form .formInsert,
+.modals .editEmployeeModal .modal .modal-dialog .modal-content .modal-body form .formInsert{
+  position: absolute;
+  top: 0;
+  height: 80%;
+  width: 95%;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.modals .editEventModal .modal .modal-dialog .modal-content .modal-body form .formInsert::-webkit-scrollbar,
+.modals .newEventModal .modal .modal-dialog .modal-content .modal-body form .formInsert::-webkit-scrollbar,
+.modals .newProjectModal .modal .modal-dialog .modal-content .modal-body form .formInsert::-webkit-scrollbar,
+.modals .editProjectModal .modal .modal-dialog .modal-content .modal-body form .formInsert::-webkit-scrollbar,
+.modals .newTaskModal .modal .modal-dialog .modal-content .modal-body form .formInsert::-webkit-scrollbar,
+.modals .editTaskModal .modal .modal-dialog .modal-content .modal-body form .formInsert::-webkit-scrollbar,
+.modals .editEmployeeModal .modal .modal-dialog .modal-content .modal-body form .formInsert::-webkit-scrollbar{
+  display: none;
+}
+
+.modals .editEventModal .modal .modal-dialog .modal-content .modal-body form label,
+.modals .editEventModal .modal .modal-dialog .modal-content .modal-body form .valid-feedback,
+.modals .editEventModal .modal .modal-dialog .modal-content .modal-body form .invalid-feedback,
+.modals .newEventModal .modal .modal-dialog .modal-content .modal-body form label,
+.modals .newEventModal .modal .modal-dialog .modal-content .modal-body form .valid-feedback,
+.modals .newEventModal .modal .modal-dialog .modal-content .modal-body form .invalid-feedback,
+.modals .newProjectModal .modal .modal-dialog .modal-content .modal-body form label,
+.modals .newProjectModal .modal .modal-dialog .modal-content .modal-body form .valid-feedback,
+.modals .newProjectModal .modal .modal-dialog .modal-content .modal-body form .invalid-feedback,
+.modals .editProjectModal .modal .modal-dialog .modal-content .modal-body form label,
+.modals .editProjectModal .modal .modal-dialog .modal-content .modal-body form .valid-feedback,
+.modals .editProjectModal .modal .modal-dialog .modal-content .modal-body form .invalid-feedback,
+.modals .newTaskModal .modal .modal-dialog .modal-content .modal-body form label,
+.modals .newTaskModal .modal .modal-dialog .modal-content .modal-body form .valid-feedback,
+.modals .newTaskModal .modal .modal-dialog .modal-content .modal-body form .invalid-feedback,
+.modals .editTaskModal .modal .modal-dialog .modal-content .modal-body form label,
+.modals .editTaskModal .modal .modal-dialog .modal-content .modal-body form .valid-feedback,
+.modals .editTaskModal .modal .modal-dialog .modal-content .modal-body form .invalid-feedback,
+.modals .editEmployeeModal .modal .modal-dialog .modal-content .modal-body form label,
+.modals .editEmployeeModal .modal .modal-dialog .modal-content .modal-body form .valid-feedback,
+.modals .editEmployeeModal .modal .modal-dialog .modal-content .modal-body form .invalid-feedback {
+  font-size: 15px;
+}
+
+.modals .editEventModal .modal .modal-dialog .modal-content .modal-body form .modal-footer,
+.modals .newEventModal .modal .modal-dialog .modal-content .modal-body form .modal-footer,
+.modals .newProjectModal .modal .modal-dialog .modal-content .modal-body form .modal-footer,
+.modals .editProjectModal .modal .modal-dialog .modal-content .modal-body form .modal-footer,
+.modals .newTaskModal .modal .modal-dialog .modal-content .modal-body form .modal-footer,
+.modals .editTaskModal .modal .modal-dialog .modal-content .modal-body form .modal-footer,
+.modals .editEmployeeModal .modal .modal-dialog .modal-content .modal-body form .modal-footer{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.container-fluid .tasks .tasksMain,
+.container-fluid .events .eventsMain,
+.container-fluid .employees .employeesMain{
+  height: calc(100% - 70px);
+  margin: 20px 50px 0 50px;
+}
+.container-fluid .tasks .tasksMain .addTask,
+.container-fluid .events .eventsMain .addEvent,
+.container-fluid .employees .employeesMain .addEmployee{
+  width: 300px;
+  height: 150px;
+  margin: 0 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  place-content: center;
+  border-radius: 15px;
+  background-color: var(--bijela);
+  transition: background-color 0.8s ease;
+
+}
+.container-fluid .tasks .tasksMain .addTask:hover{
+  background-color: var(--crvena);
+  cursor: pointer;
+}
+
+.container-fluid .employees .employeesMain .addEmployee:hover{
+  background-color: var(--narancasta);
+  cursor: pointer;
+}
+
+.container-fluid .tasks .tasksMain .addTask i{
+  padding: 14px 15px;
+  border-radius: 50%;
+  color: var(--bijela);
+  background-color: var(--crvena);
+  transition: background-color 0.8s ease;
+}
+.container-fluid .events .eventsMain .addEvent i{
+  padding: 14px 15px;
+  border-radius: 50%;
+  color: var(--bijela);
+  background-color: var(--plava3);
+  transition: background-color 0.8s ease;
+}
+.container-fluid .employees .employeesMain .addEmployee i{
+  padding: 14px 15px;
+  border-radius: 50%;
+  color: var(--bijela);
+  background-color: var(--narancasta);
+  transition: background-color 0.8s ease;
+}
+.container-fluid .employees .employeesMain .addEmployee:hover i{
+  color: var(--narancasta);
+  background-color: var(--bijela);
+}
+
+.container-fluid .tasks .tasksMain .addTask:hover i{
+  color: var(--crvena);
+  background-color: var(--bijela);
+}
+.container-fluid .events .eventsMain .addEvent:hover i{
+  color: var(--plava3);
+  background-color: var(--bijela);
+}
+
+.container-fluid .tasks .tasksMain .addTask:hover h3,
+.container-fluid .events .eventsMain .addEvent:hover h3,
+.container-fluid .employees .employeesMain .addEmployee:hover h3{
+  color: var(--bijela);
+}
+.container-fluid .tasks .tasksMain .tasksDiv,
+.container-fluid .employees .employeesMain .employeesDiv{
+  height: calc(100% - 70px);
+  display: grid;
+  margin-bottom: 20px;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  grid-template-rows: repeat(auto-fit, minmax(100px, 100px));
+  gap: 2rem;
+}
+
+.container-fluid .events .eventsMain .eventsDiv{
+  height: calc(100% - 70px);
+  display: grid;
+  margin-bottom: 20px;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
+  grid-template-rows: repeat(auto-fit, minmax(100px, 100px));
+  gap: 2rem;
+}
+
+.container-fluid .tasks .tasksMain .tasksDiv .task,
+.container-fluid .events .eventsMain .eventsDiv .event,
+.container-fluid .employees .employeesMain .employeesDiv .employee{
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  margin: 10px;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  border-radius: 15px;
+  background-color: var(--bijela);
+  transition: background-color 0.8s ease;
+
+}
+.container-fluid .tasks .tasksMain .tasksDiv .task:hover{
+  color: var(--bijela);
+  background-color: var(--narancasta);
+  cursor: pointer;
+}
+.container-fluid .events .eventsMain .eventsDiv .event:hover{
+  color: var(--bijela);
+  background-color: var(--zelena);
+  cursor: pointer;
+}
+.container-fluid .employees .employeesMain .employeesDiv .employee:hover{
+  color: var(--bijela);
+  background-color: var(--crvena);
+  cursor: pointer;
+}
+
+.container-fluid .tasks .tasksMain .tasksDiv .task div,
+.container-fluid .employees .employeesMain .employeesDiv .employee div{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  place-content: space-between;
+  place-items: center;
+  border-radius: 15px;
+  margin: 0;
+  transition: background-color 0.8s ease;
+}
+
+.container-fluid .events .eventsMain .eventsDiv .event div{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  place-content: space-between;
+  place-items: center;
+  border-radius: 15px;
+  margin: 0;
+  transition: background-color 0.8s ease;
+}
+
+.container-fluid .tasks .tasksMain .tasksDiv .task div h2,
+.container-fluid .employees .employeesMain .employeesDiv .employee div h2{
+  padding-left: 20%;
+  transition: background-color 0.8s ease;
+}
+.container-fluid .events .eventsMain .eventsDiv .event div .data{
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+}
+.container-fluid .tasks .tasksMain .tasksDiv .task div i{
+  height: 100%;
+  width: 25%;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  border-radius: 0 15px 15px 0;
+  color: var(--bijela);
+  background-color: var(--narancasta);
+  transition: background-color 0.8s ease;
+}
+
+.container-fluid .events .eventsMain .eventsDiv .event div i{
+  height: 100%;
+  width: 25%;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  border-radius: 0 15px 15px 0;
+  color: var(--bijela);
+  background-color: var(--zelena);
+  transition: background-color 0.8s ease;
+}
+.container-fluid .employees .employeesMain .employeesDiv .employee div i{
+  height: 100%;
+  width: 25%;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  border-radius: 0 15px 15px 0;
+  color: var(--bijela);
+  background-color: var(--crvena);
+  transition: background-color 0.8s ease;
+}
+
+.container-fluid .tasks .tasksMain .tasksDiv .task div:hover i,
+.container-fluid .events .eventsMain .eventsDiv .event div:hover i,
+.container-fluid .employees .employeesMain .employeesDiv .employee div:hover i{
+  color: black;
+  background-color: var(--bijela);
+}
+
+

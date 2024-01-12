@@ -1,0 +1,383 @@
+:root{
+  --plava: #161d3b;
+  --plava2: #3876BF;
+  --plava3: #2196F3;
+  --narancasta: #fa8c45;
+  --zelena: #5cb85c;
+  --crvena: #d9534f;
+  --bijela: #ffffff;
+  --siva1: #f7f5f4;
+  --siva2: #e1e1e1;
+  --siva3: #939394;
+
+}
+
+
+body {
+  font: 1.5vw "Lucida Grande", Helvetica, Arial, sans-serif !important;
+  background-color: var(--siva2);
+}
+
+
+header {
+  position: absolute !important;
+  left: 130px;
+  width: calc(100% - 180px);
+  height: fit-content;
+  animation: slideFromTop 2s ease;
+}
+header a {
+  padding-left: 3%;.
+}
+header h1,
+header h4{
+  font-weight: bold;
+  color: var(--plava);
+}
+
+header form {
+  padding-right: 3%;
+}
+header form input{
+  background-color: var(--bijela) !important;
+  border: 1px solid var(--bijela) !important;
+  border-radius: 8px !important;
+  width: 400px !important;
+}
+header form input:active,
+header form input:hover{
+  background-color: var(--bijela) !important;
+  border: 1px solid var(--bijela) !important;
+}
+header form input:focus{
+  outline: 0 !important;
+}
+header form button{
+  background-color: var(--plava) !important;
+  color: var(--bijela) !important;
+  border: none;
+  border-radius: 8px !important;
+}
+header form button:focus{
+  outline: 0 !important;
+}
+header form input::placeholder{
+  color: var(--siva3) !important;
+}
+header span{
+  background-color: var(--plava) !important;
+  border-radius: 8px;
+}
+header .navbar-toggler {
+  background-color: var(--plava) !important;
+}
+
+
+nav .w3-sidebar{
+  display: grid;
+  place-items: center;
+  width: 60px;
+  background-color: var(--plava) !important;
+
+}
+nav .w3-sidebar a:hover{
+  background-color: var(--plava) !important;
+  text-decoration: none;
+}
+nav .w3-sidebar i{
+  color: var(--siva2);
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+nav .w3-sidebar i:hover{
+  color: var(--narancasta);
+}
+nav .active{
+  color: var(--narancasta) !important;
+}
+nav .w3-sidebar #span1 {
+  height: 10rem;
+}
+nav .w3-sidebar #span2 {
+  height: 20rem;
+}
+
+main{
+  position: absolute;
+  left: 140px;
+  top: 160px;
+  width: calc(100% - 200px) !important;
+  height: calc(100% - 220px);
+  display: grid;
+  grid-template-columns: 47.5% 5% 47.5%;
+  grid-template-rows: 45% 10% 45%;
+}
+
+main .projekti,
+main .zadaci,
+main .dogadjaji,
+main .biljeske{
+  grid-area: 1 / 1 / 2 / 2;
+  background-color: var(--bijela);
+  border-radius: 15px;
+  display: grid;
+  grid-template-rows: 20% 75%;
+}
+main .projekti .container-fluid,
+main .zadaci .container-fluid,
+main .dogadjaji .container-fluid,
+main .biljeske .container-fluid{
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+main .projekti .container-fluid::-webkit-scrollbar,
+main .zadaci .container-fluid::-webkit-scrollbar,
+main .dogadjaji .container-fluid::-webkit-scrollbar,
+main .biljeske .container-fluid::-webkit-scrollbar{
+  display: none;
+}
+main .projekti .naslov,
+main .zadaci .naslov,
+main .dogadjaji .naslov,
+main .biljeske .naslov{
+  grid-area: 1 ;
+  display: flex;
+  place-items: center;
+}
+main .projekti .naslov p,
+main .zadaci .naslov p,
+main .dogadjaji .naslov p,
+main .biljeske .naslov p{
+  margin: 1% 0 0 5%;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--plava);
+  animation: slideIn 2s ease;
+
+}
+main .projekti .container-fluid article{
+  place-items: center;
+}
+main .projekti .container-fluid article,
+main .zadaci .container-fluid .zadatak,
+main .dogadjaji .container-fluid .dogadjaj ,
+main .biljeske .container-fluid .napomena,
+main .biljeske .container-fluid form{
+  margin: 1% 0;
+  padding: 1% 4% 1% 8%;
+  cursor: default;
+  font-size: 18px;
+  display: flex;
+  place-content: space-between;
+  border-radius: 0 15px 15px 0;
+  border-left: 5px solid;
+  animation: slideIn 2s ease;
+}
+main .projekti .container-fluid .datum{
+  color: var(--siva3);
+}
+main .dogadjaji .container-fluid .dogadjaj .ime{
+  color: var(--plava);
+}
+main .dogadjaji .container-fluid .dogadjaj .datum{
+  color: var(--siva3);
+}
+main .biljeske .container-fluid form input{
+  border: 1px solid;
+  padding: 3px;
+  border-radius: 5px;
+}
+main .biljeske .container-fluid form input::placeholder{
+  font-size: 15px;
+}
+main .biljeske .naslov {
+  display: flex;
+  font-size: 22px;
+  padding-right: 25px;
+  place-content: space-between;
+  color: var(--plava);
+  animation: slideIn 2s ease;
+}
+
+main .naslov i:hover{
+  color: var(--narancasta);
+  cursor: pointer;
+}
+
+main .biljeske .container-fluid .napomena button,
+main .biljeske .container-fluid  form button{
+  border: none;
+  border-radius: 6px;
+  background-color: inherit;
+  color: var(--siva3);
+}
+main .biljeske .container-fluid .napomena button:hover{
+  box-sizing: border-box;
+  color: var(--narancasta);
+}
+main .projekti .container-fluid article:hover,
+main .zadaci .container-fluid div:hover,
+main .dogadjaji .container-fluid div:hover,
+main .biljeske .container-fluid div:hover{
+  background-color: var(--siva1);
+}
+main .zadaci {
+  grid-area: 1 / 3 / 1 / 4;
+  background-color: var(--bijela);
+  border-radius: 15px;
+}
+
+main .zadaci .zadatak article{
+  width: 90%;
+  display: flex;
+  place-content: space-between;
+}
+main .zadaci .zadatak article .datum{
+  color: var(--siva3);
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 2px solid #2196F3;
+  border-radius: 50%;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  background-color: inherit;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+.zadaci .container-fluid article .crossed-text {
+  text-decoration: line-through;
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 7px;
+  height: 13px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+main .zadaci .container-fluid .zadatak .sekcija{
+  display: flex;
+  place-items: center;
+  place-content: space-between;
+  width: 50%;
+}
+main .dogadjaji {
+  grid-area: 3 / 1 / 4 / 2;
+  background-color: var(--bijela);
+  border-radius: 15px;
+}
+
+main .biljeske {
+  grid-area: 3 / 3 / 4 / 4;
+  background-color: var(--bijela);
+  border-radius: 15px;
+}
+main .poruka{
+  height: 90%;
+  display: flex;
+  place-content: center;
+  place-items: center;
+}
+main .poruka:hover{
+  background-color: var(--bijela) !important;
+}
+main .poruka p{
+  font-style: italic;
+  color: var(--siva3);
+  font-size: 20px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media screen and (max-width: 1050px){
+  header form input{
+    width: 70% !important;
+  }
+  main {
+    grid-template-rows: calc(91% / 4) 3% calc(91% / 4) 3% calc(91% / 4) 3% calc(91% / 4);
+    grid-template-columns: 100%;
+  }
+  main .projekti{
+    grid-area: 1 / auto / 2 / auto ;
+    overflow-x: hidden;
+  }
+  main .zadaci{
+    grid-area: 3 / auto / 4 / auto;
+    overflow-x: hidden;
+  }
+  main .dogadjaji{
+    grid-area: 5 / auto / 6 / auto;
+    overflow-x: hidden;
+  }
+  main .biljeske{
+    grid-area: 7 / auto / 8 / auto;
+    overflow-x: hidden;
+  }
+
+}

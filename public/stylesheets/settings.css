@@ -1,0 +1,134 @@
+:root{
+  --plava: #161d3b;
+  --plava2: #3876BF;
+  --plava3: #2196F3;
+  --narancasta: #fa8c45;
+  --zelena: #5cb85c;
+  --crvena: #d9534f;
+  --bijela: #ffffff;
+  --siva1: #f7f5f4;
+  --siva2: #e1e1e1;
+  --siva3: #939394;
+
+}
+
+
+body {
+  font: 1.5vw "Lucida Grande", Helvetica, Arial, sans-serif !important;
+  background-color: var(--siva2);
+}
+
+
+.navbar {
+  position: absolute !important;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  animation: slideFromTop 2s ease;
+}
+
+header h1,
+header h4{
+  font-weight: bold;
+  color: var(--plava);
+}
+
+
+
+
+nav .w3-sidebar{
+  display: grid;
+  place-items: center;
+  width: 60px;
+  background-color: var(--plava) !important;
+
+}
+nav .w3-sidebar a:hover{
+  background-color: var(--plava) !important;
+  text-decoration: none;
+}
+nav .w3-sidebar i{
+  color: var(--siva2);
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+nav .w3-sidebar i:hover{
+  color: var(--narancasta);
+}
+nav .active{
+  color: var(--narancasta) !important;
+}
+nav .w3-sidebar #span1 {
+  height: 10rem;
+}
+nav .w3-sidebar #span2 {
+  height: 20rem;
+}
+
+main{
+  height: calc(100vh - 2px);
+  display: grid;
+  place-items: center;
+  background: var(--pozadina);
+
+}
+.container {
+  border: 0;
+  height: 70%;
+  width: 45%;
+  display: grid;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: var(--bijela);
+  padding-top: 50px;
+}
+
+.container form h2{
+  display: grid;
+  place-content: center;
+  margin: 20% 0 30% 0;
+  font-weight: bold;
+  color: var(--plava);
+}
+body form{
+  position: relative !important;
+  width: 80%;
+  left: 10%;
+}
+
+.container form input{
+  border-width: 0 0 4px 0 ;
+  background-color: inherit;
+}
+
+.container form input:hover{
+  border-color: var(--plava);
+}
+
+.container form input:active,
+.container form input:focus{
+  background-color: inherit;
+  outline: none;
+  border-color: var(--plava);
+}
+
+.container form button{
+  position: absolute;;
+  right: 0;
+  margin-top: 30px;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .container {
+    height: 60%;
+    width: 45%;
+  }
+  .container form h2{
+    margin: 10% 0 20% 0;
+
+  }
+}

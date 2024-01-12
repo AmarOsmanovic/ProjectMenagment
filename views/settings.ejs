@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://kit.fontawesome.com/68d9ef9e6f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="/stylesheets/settings.css" />
+  <title><%= title %></title>
+  <link rel="icon" href="/images/project-management.png" type="image/png">
+</head>
+<body>
+<header class="navbar navbar-expand-md navbar-dark">
+      <h1>
+          Postavke računa
+      </h1>
+</header>
+
+<nav>
+  <div class="w3-sidebar w3-bar-block w3-xlarge">
+    <span id="span1"></span>
+    <a href="/index" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
+    <a href="/chat" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+    <a href="/stats" class="w3-bar-item w3-button"><i class="fa-solid fa-chart-pie"></i></a>
+    <a href="/edit" class="w3-bar-item w3-button"><i class="fa-solid fa-pen-to-square"></i></a>
+    <span id="span2"></span>
+    <a href="/settings" class="w3-bar-item w3-button"><i class="fa-solid fa-gear active"></i></a>
+    <a href="/users/logout" class="w3-bar-item w3-button"><i class="fa-solid fa-right-from-bracket"></i></a>
+  </div>
+</nav>
+
+<main>
+    <div class="container">
+        <form method="post" action="/settings/update-user">
+            <div class="form-group">
+                <input type="text" class="form-control" id="id"  name="id" value="<%= user_id%>" style="display:none;">
+            </div>
+            <div class="form-group">
+                <label for="first_name">Ime</label>
+                <input type="text" class="form-control" id="first_name" placeholder="Unesi ime" autocomplete="off" name="first_name" value="<%= first_name%>" required>
+                <div class="valid-feedback">Validno.</div>
+                <div class="invalid-feedback">Ovo polje je obavezno.</div>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Prezime</label>
+                <input type="text" class="form-control" id="last_name" placeholder="Unesi prezime" autocomplete="off" name="last_name" value="<%= last_name%>" required>
+                <div class="valid-feedback">Validno.</div>
+                <div class="invalid-feedback">Ovo polje je obavezno.</div>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" id="email" placeholder="Unesi email" autocomplete="off" name="email" value="<%= email%>" required>
+                <div class="valid-feedback">Validno.</div>
+                <div class="invalid-feedback">Ovo polje je obavezno.</div>
+            </div>
+            <div class="form-group">
+                <label for="password" style="display: flex; flex-direction: row; place-items: center" >Šifra <h5 style="font-size: 13px; margin-left: 5px">(Unesi novu ili ostavi prazno polje)</h5></label>
+                <input type="password" class="form-control" id="password" placeholder="Unesi šifru" autocomplete="off" name="password">
+                <div class="valid-feedback">Validno.</div>
+                <div class="invalid-feedback">Ovo polje je obavezno.</div>
+            </div>
+            <div class="form-group">
+                <label for="age">Godine</label>
+                <input type="number" class="form-control" id="age" autocomplete="off" name="age" value="<%= age%>" required>
+                <div class="valid-feedback">Validno.</div>
+                <div class="invalid-feedback">Ovo polje je obavezno.</div>
+            </div>
+            <div class="form-group form-check">
+                <div class="valid-feedback">Validno.</div>
+                </label>
+            </div>
+            <button type="submit" class="btn btn-success">Spasi izmjene</button>
+
+        </form>
+    </div>
+</main>
+
+</body>
+</html>
+
+

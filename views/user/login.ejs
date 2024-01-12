@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://kit.fontawesome.com/68d9ef9e6f.js" crossorigin="anonymous"></script>
+
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/login.css' />
+  <link rel="icon" href="/images/project-management.png" type="image/png">
+
+</head>
+<body>
+
+<div class="container">
+  <form method="post" action="/users/login-user">
+    <h2>Prijava</h2>
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="email" class="form-control" id="email" placeholder="Unesi email" autocomplete="email" name="email" required>
+      <div class="valid-feedback">Validno.</div>
+      <div class="invalid-feedback">Ovo polje je obavezno.</div>
+    </div>
+    <div class="form-group">
+      <label for="password">Sifra</label>
+      <input type="password" class="form-control" id="password" placeholder="Unesi sifru" autocomplete="off" name="password" required>
+      <div class="valid-feedback">Validno.</div>
+      <div class="invalid-feedback">Ovo polje je obavezno.</div>
+    </div>
+    <a class="zabSif" href="#">Zaboravili ste sifru?</a>
+    <div class="form-group form-check">
+        <div class="valid-feedback">Validno.</div>
+      </label>
+    </div>
+    <button type="submit" class="btn" >Prijavi se</button>
+    <p>ili</p>
+    <a class="reg" href="/users/register">Registruj se</a>
+
+  </form>
+</div>
+</body>
+</html>

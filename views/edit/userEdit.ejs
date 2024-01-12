@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://kit.fontawesome.com/68d9ef9e6f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="/stylesheets/userEdit.css" />
+  <title><%= title %></title>
+  <link rel="icon" href="/images/project-management.png" type="image/png">
+</head>
+<body>
+<nav>
+  <div class="w3-sidebar w3-bar-block w3-xlarge">
+    <span id="span1"></span>
+    <a href="/index" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
+    <a href="/chat" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+    <a href="/stats" class="w3-bar-item w3-button"><i class="fa-solid fa-chart-pie"></i></a>
+    <a href="/edit" class="w3-bar-item w3-button"><i class="fa-solid fa-pen-to-square active"></i></a>
+    <span id="span2"></span>
+    <a href="/settings" class="w3-bar-item w3-button"><i class="fa-solid fa-gear"></i></a>
+    <a href="/users/logout" class="w3-bar-item w3-button"><i class="fa-solid fa-right-from-bracket"></i></a>
+  </div>
+</nav>
+
+            <div class="container-fluid">
+                <div class="container">
+                <div class="header">
+                    <h2 class="title">Unesi Vrijeme</h2>
+                </div>
+                <div class="body">
+                    <form action="/edit/addTime" method="post">
+                        <div class="formInsert">
+                            <div class="form-group" style="display: none">
+                                <input type="text" class="form-control" id="userId"  name="userId" value="<%= user_id%>">
+                            </div>
+                            <div class="form-group">
+                                <div class="time">
+                                    <div>
+                                        <label for="hours">Sati:</label>
+                                        <input type="number" class="form-control" id="hours"  name="hours"  required>
+                                    </div>
+                                    <div>
+                                        <label for=minutes">Minute:</label>
+                                        <input type="number" class="form-control" id="minutes"  name="minutes"  required>
+                                    </div>
+                                </div>
+                                <div class="valid-feedback">Validno.</div>
+                                <div class="invalid-feedback">Ovo polje je obavezno!</div>
+                            </div>
+                            <div class="form-group">
+                                <label>Projekat: </label>
+                                <div class="project" >
+                                    <% projects.forEach(function (project) {%>
+                                    <input type="radio" id="project<%project.project_name%>" name="projectId" value="<%= project.project_id%>" required>
+                                    <label for="project<%= project.project_id%>"><%= project.project_name%></label>
+                                    <%});%>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <button type="button" class="btn btn-outline-danger">Obriši</button>
+                            <button type="submit" class="btn btn-success">Podnesi</button>
+
+                        </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+
+
+
+</body>
+</html>
+
+

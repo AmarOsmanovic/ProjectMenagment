@@ -1,0 +1,103 @@
+:root{
+  --plava: #161d3b;
+  --plava2: #3876BF;
+  --plava3: #2196F3;
+  --narancasta: #fa8c45;
+  --zelena: #5cb85c;
+  --crvena: #d9534f;
+  --bijela: #ffffff;
+  --siva1: #f7f5f4;
+  --siva2: #e1e1e1;
+  --siva3: #939394;
+
+}
+
+
+body {
+  font: 1.5vw "Lucida Grande", Helvetica, Arial, sans-serif !important;
+  background-color: var(--siva2) !important;
+}
+
+
+nav .w3-sidebar{
+  display: grid;
+  place-items: center;
+  width: 60px;
+  background-color: var(--plava) !important;
+
+}
+nav .w3-sidebar a:hover{
+  background-color: var(--plava) !important;
+  text-decoration: none;
+}
+nav .w3-sidebar i{
+  color: var(--siva2);
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+nav .w3-sidebar i:hover{
+  color: var(--narancasta);
+}
+nav .active{
+  color: var(--narancasta) !important;
+}
+nav .w3-sidebar #span1 {
+  height: 10rem;
+}
+nav .w3-sidebar #span2 {
+  height: 20rem;
+}
+
+.container-fluid{
+  position: absolute;
+  height: calc(100% - 150px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  margin-top: 150px;
+}
+.container-fluid .container{
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  width: 25%;
+  padding: 20px 15px;
+  height: fit-content;
+  border-radius: 15px;
+  background-color: var(--bijela);
+}
+.container-fluid .header{
+  height: 100px;
+}
+
+.container-fluid .body{
+  height: 100%;
+}
+form{
+  height: fit-content;
+}
+form label {
+  font-size: 17px;
+}
+form .time{
+  display: flex;
+  flex-direction: row;
+}
+form .time div{
+  margin-right: 5px;
+}
+
+form .time input{
+  width: 70px;
+}
+
+.container-fluid .footer{
+  display: flex;
+  place-content: flex-end;
+}
+
+.container-fluid .footer button {
+  margin-left: 5px;
+}

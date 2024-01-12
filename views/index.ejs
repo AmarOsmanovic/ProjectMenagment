@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://kit.fontawesome.com/68d9ef9e6f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title><%= title %></title>
+  <link rel="icon" href="/images/project-management.png" type="image/png">
+</head>
+<body>
+<header class="navbar navbar-expand-md navbar-dark">
+  <a class="navbar-brand">
+      <h1>
+          <% if (first_name.slice(-1).toLowerCase() === 'a') { %>
+              Dobro došla <%= first_name %>
+          <% } else { %>
+              Dobro došao <%= first_name %>
+          <% } %>
+      </h1>
+    <h4>Evo tvoje agende za danas.</h4>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <form class="form-inline ml-auto" action="#">
+      <input class="form-control mr-2 long-input" type="text" placeholder="Pretraga">
+      <button class="btn pl-3 pr-3" type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</header>
+
+<nav>
+  <div class="w3-sidebar w3-bar-block w3-xlarge">
+    <span id="span1"></span>
+    <a href="/index" class="w3-bar-item w3-button"><i class="fa fa-home active"></i></a>
+    <a href="/chat" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+    <a href="/stats" class="w3-bar-item w3-button"><i class="fa-solid fa-chart-pie"></i></a>
+    <a href="/edit" class="w3-bar-item w3-button"><i class="fa-solid fa-pen-to-square"></i></a>
+    <span id="span2"></span>
+    <a href="/settings" class="w3-bar-item w3-button"><i class="fa-solid fa-gear"></i></a>
+    <a href="/users/logout" class="w3-bar-item w3-button"><i class="fa-solid fa-right-from-bracket"></i></a>
+  </div>
+</nav>
+
+<main>
+  <div class="projekti">
+    <div class="naslov"><p>Projekti</p></div>
+    <div class="container-fluid" id="projectsCon">
+      <% projects.forEach(function(project) { %>
+        <article <%if (project.status === 'aktivan' && new Date(project.end_date) < new Date()) {%>style="border-left-color: var(--crvena);" <% } else if(project.status === 'nadolazeci') { %>style="border-left-color: var(--narancasta);" <% } else if(project.status === 'aktivan') { %>style="border-left-color: var(--zelena);" <% } else { %>style="border-left-color: var(--plava3);" <% }%>>
+          <% if (project.status === 'nadolazeci') { %>
+            <div class="nadolazeciProjekat"><%= project.project_name %></div>
+            <section>
+              <div class="datum">Počinje: <%= project.formatted_start_date%></div>
+            </section>
+              <% } else if(project.status === 'zavrsen') { %>
+                  <div class="projekat"><%= project.project_name %></div>
+                  <div class="datum">Završen</div>
+              <% } else if(project.status === 'aktivan' && project.end_date < new Date()) {
+                  const kasnjenje = new Date() - new Date(project.end_date);
+                  const dani = Math.floor(kasnjenje / (1000 * 60 * 60 * 24));
+              %>
+                  <div class="projekat"><%= project.project_name %></div>
+                  <div class="datum">Kasni <%= dani%>  <% if (dani % 10 === 1) { %>dan<% } else { %>dana<% } %></div>
+              <% } else { %>
+                <div class="projekat"><%= project.project_name %></div>
+                <div class="datum">Rok: <%= project.formatted_end_date%></div>
+              <% } %>
+        </article>
+      <% }); %>
+    </div>
+  </div>
+  <div class="zadaci">
+    <div class="naslov">
+      <p>Taskovi</p>
+    </div> <!--TODO: IMPLEMENTIRATI UKOLIKO TASK KASNI MANJE OD 1H DA SE ISPISU MINUTE KASNJENJA-->
+    <div class="container-fluid" id="tasksCon">
+      <% tasks.forEach(function(task) { %>
+        <div class="zadatak" <% if (task.status === 'aktivan' && new Date() > new Date(task.end_date)) { %>style="border-left-color: var(--crvena);" <% } else if (task.status === 'zavrsen') { %>style="border-left-color: var(--plava3);" <% } else { %>style="border-left-color: var(--zelena);" <% } %> data-task-id="<%=task.task_id%>">
+        <label class="checkbox-container">
+          <%if (task.status === 'zavrsen') { %>
+            <input type="checkbox" checked onchange="toggleCrossedText(this,<%= JSON.stringify(task) %>)">
+          <% } else { %>
+            <input type="checkbox"  onchange="toggleCrossedText(this,<%= JSON.stringify(task) %>)">
+          <% } %>
+          <span class="checkmark"></span>
+        </label>
+        <article>
+          <%if (task.status === 'zavrsen') { %>
+            <div class="sekcija">
+                <div class="tekst crossed-text"><%= task.task_name %></div>
+                <div class="supervisor"><%= task.supervisor %></div>
+            </div>
+            <div class="datum crossed-text"><%= task.formatted_end_date %></div>
+          <% } else if(task.status === 'aktivan' && task.end_date < new Date()) {
+              const kasnjenje = new Date() - new Date(task.end_date);
+              const dani = Math.floor(kasnjenje / (1000 * 60 * 60 * 24));
+          %>
+              <div class="sekcija">
+                  <div class="tekst"><%= task.task_name %> </div>
+                  <div class="supervisor"><%= task.supervisor %></div>
+              </div>
+              <div class="datum">Kasni <%= dani%>  <% if (dani % 10 === 1) { %>dan<% } else { %>dana<% } %></div>
+          <% } else { %>
+                <div class="sekcija">
+                <div class="tekst"><%= task.task_name %> </div>
+                <div class="supervisor"><%= task.supervisor %></div>
+            </div>
+            <div class="datum"><%= task.formatted_end_date %></div>
+          <% } %>
+        </article>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+  <div class="dogadjaji">
+    <div class="naslov"><p>Događaji</p></div>
+    <div class="container-fluid" id="eventsCon">
+      <% events.forEach(function(eventt) { %>
+        <div class="dogadjaj" <%if (new Date(eventt.date) < new Date()) {%>style="border-left-color: var(--plava2);" <% } else { %>style="border-left-color: var(--zelena);" <% }%>>
+          <div class="ime"><%= eventt.event_name %> </div>
+          <div class="datum"><%= eventt.formatted_date %> </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+  <div class="biljeske">
+    <div class="naslov"><p>Bilješke</p><i class="fa fa-add" onclick="addNote()"></i></div>
+    <div class="container-fluid" id="notesCon">
+      <% notes.forEach(function(note) { %>
+        <div id="napomena<%= note.id%>" class="napomena"><%= note.note %><button onclick="removeNote(<%= note.id%>)"><i class="fa fa-close"></i></button></div>
+      <% }); %>
+    </div>
+  </div>
+
+    <div id="user_id" style="display: none"><%= user_id %></div>
+</main>
+<script>
+
+    function addNote() {
+        // Create a new form element
+        var form = document.createElement("form");
+
+        var input = document.createElement("input");
+        input.type = "text";
+        input.name = "newNote";
+        input.placeholder = "Dodaj bilješku";
+
+        var submitButton = document.createElement("button");
+        submitButton.type = "submit";
+        submitButton.innerHTML = '<i class="fa fa-check"></i>';
+
+        form.appendChild(input);
+        form.appendChild(submitButton);
+
+        document.getElementById("notesCon").appendChild(form);
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            var newNoteValue = input.value.trim();
+            if (newNoteValue !== "") {
+
+                var newNoteDiv = document.createElement("div");
+                newNoteDiv.className = "napomena";
+                newNoteDiv.id = "napomena";
+                newNoteDiv.innerHTML = newNoteValue;
+                let user_id = document.getElementById('user_id').innerHTML;
+                var closeButton = document.createElement("button");
+                closeButton.innerHTML = '<i class="fa fa-close"></i>';
+
+
+                newNoteDiv.appendChild(closeButton);
+
+                document.getElementById("notesCon").appendChild(newNoteDiv);
+
+                form.remove();
+
+                fetch('/index/addNote', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        text: newNoteValue,
+                        user_id: user_id,
+                    }),
+                }).then(response => response.json())
+                    .then(data => {
+                        const noteId = data.id;
+                        newNoteDiv.id = "napomena" + noteId;
+                        closeButton.setAttribute("onclick", "removeNote(" + noteId + ")");
+                    })
+            }
+        });
+    }
+
+
+    function removeNote(id) {
+        var notesCon = document.getElementById("napomena" + id);
+        if (notesCon) {
+            notesCon.remove();
+        }
+        fetch('/index/deleteNote', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: id,
+            }),
+        })
+    }
+
+    function toggleCrossedText(checkbox, task) {
+    const zadatakDiv = checkbox.closest('.zadatak');
+
+    if (zadatakDiv) {
+        const tekst = zadatakDiv.querySelector('.tekst');
+        const datum = zadatakDiv.querySelector('.datum');
+
+      if (tekst && datum) {
+          tekst.classList.toggle('crossed-text');
+          datum.classList.toggle('crossed-text');
+
+          if (new Date() < new Date(task.end_date)) {
+              zadatakDiv.style.borderLeftColor = checkbox.checked ? 'var(--plava3)' : 'var(--zelena)';
+          } else {
+              zadatakDiv.style.borderLeftColor = checkbox.checked ? 'var(--plava3)' : 'var(--crvena)';
+          }
+
+
+
+          const taskId = zadatakDiv.dataset.taskId;
+          const isChecked = checkbox.checked;
+
+          fetch('/index/update-task', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                taskId: taskId,
+                status: isChecked,
+          }),
+        })
+      }
+    }
+  }
+</script>
+<script src="javascripts/emptyDataMessage.js"></script>
+</body>
+</html>
+
+

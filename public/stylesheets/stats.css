@@ -1,0 +1,613 @@
+:root{
+  --plava: #161d3b;
+  --plava2: #3876BF;
+  --plava3: #2196F3;
+  --narancasta: #fa8c45;
+  --zelena: #5cb85c;
+  --crvena: #d9534f;
+  --bijela: #ffffff;
+  --siva1: #f7f5f4;
+  --siva2: #e1e1e1;
+  --siva3: #939394;
+
+}
+
+
+body {
+  font: 1.5vw "Lucida Grande", Helvetica, Arial, sans-serif !important;
+  background-color: var(--siva2) !important;
+}
+
+
+header {
+  position: absolute !important;
+  left: 130px;
+  top: 20px;
+  width: calc(100% - 180px);
+  height: fit-content;
+}
+header a {
+  padding-left: 3%;.
+}
+header h1,
+header h4{
+  font-weight: bold;
+  color: var(--plava);
+}
+
+header form {
+  padding-right: 3%;
+}
+header form input{
+  background-color: var(--bijela) !important;
+  border: 1px solid var(--bijela) !important;
+  border-radius: 8px !important;
+  width: 400px !important;
+}
+header form input:active,
+header form input:hover{
+  background-color: var(--siva1) !important;
+  border: 1px solid var(--siva1) !important;
+}
+header form input:focus{
+  outline: 0 !important;
+}
+header form button{
+  background-color: var(--plava) !important;
+  color: var(--bijela) !important;
+  border: none;
+  border-radius: 8px !important;
+}
+header form button:focus{
+  outline: 0 !important;
+}
+header form input::placeholder{
+  color: var(--siva3) !important;
+}
+header span{
+  background-color: var(--plava) !important;
+  border-radius: 8px;
+}
+header .navbar-toggler {
+  background-color: var(--plava) !important;
+}
+
+
+nav .w3-sidebar{
+  display: grid;
+  place-items: center;
+  width: 60px;
+  background-color: var(--plava) !important;
+
+}
+nav .w3-sidebar a:hover{
+  background-color: var(--plava) !important;
+  text-decoration: none;
+}
+nav .w3-sidebar i{
+  color: var(--siva2);
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+nav .w3-sidebar i:hover{
+  color: var(--narancasta);
+}
+nav .active{
+  color: var(--narancasta) !important;
+}
+nav .w3-sidebar #span1 {
+  height: 10rem;
+}
+nav .w3-sidebar #span2 {
+  height: 20rem;
+}
+
+main{
+  position: absolute;
+  left: 220px;
+  top: 110px;
+  width: calc(100% - 400px);
+  height: calc(100% - 180px);
+  display: flex;
+  flex-direction: row;
+  place-content: space-between;
+}
+
+main .sec1{
+  display: flex;
+  flex-direction: column;
+  place-content: space-between;
+  width: 35%;
+}
+main .sec1 div{
+  height: 30%;
+  border-radius: 15px;
+  background-color: var(--bijela);
+}
+main .sec1 .danas{
+  display: grid;
+  grid-template-columns: repeat(4,25%);
+  grid-template-rows: repeat(4,25%);
+  background-color: var(--plava2);
+  color: var(--bijela);
+
+}
+main .sec1 .danas p{
+  font-size: 30px;
+  padding: 8% 0 0 15%;
+  grid-area: auto / 1 / auto / 3;
+}
+main .sec1 .danas #datum{
+  grid-area: auto / 3 / auto / 5;
+  font-size: 15px;
+  margin: 11% 0 0 25%;
+}
+main .sec1 .danas h1{
+  grid-area: 2 / 1 / 4 / 3;
+  font-size: 55px;
+  font-weight: bold;
+  margin: 10% 0 0 25%;
+}
+
+main .sec1 .danas img{
+  grid-area: 2 / 3 / 4 / 5;
+  margin: 5% 0 0 28%;
+  filter: brightness(0) invert(1);
+}
+main .sec1 .danas h5{
+  grid-area: auto / 1 / auto / 3;
+  padding: 8% 0 0 15%;
+}
+
+main .sec1 .aktivnost{
+  display: grid;
+  grid-template-columns: repeat(4,25%);
+  grid-template-rows: repeat(4,25%);
+  overflow: hidden;
+}
+main .sec1 .aktivnost p{
+  color: var(--siva3);
+  font-size: 30px;
+  padding: 8% 0 0 15%;
+  grid-area: auto / 1 / auto / 3;
+}
+main .sec1 .aktivnost #aktivnostGraf{
+  grid-area: 2 / 1 / 5 / 5;
+  height: 100%;
+  width: 100%;
+}
+
+main .sec2{
+  display: flex;
+  flex-direction: column;
+  place-items: flex-end;
+  place-content: space-between;
+  width: 60%;
+}
+main .sec2 .pregled{
+  width: 100%;
+  height: 65%;
+  display: grid;
+  grid-template-rows: repeat(10, 10%);
+  grid-template-columns: repeat(4, 25%);
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: var(--bijela);
+}
+main .sec2 .pregled p{
+  color: var(--siva3);
+  font-size: 30px;
+  padding: 8% 0 0 15%;
+  grid-area: auto / 1 / auto / 3;
+}
+main .sec2 .pregled #pregledGraf{
+  grid-area: 3 / 1 / 10 / 5;
+  height: 100%;
+  width: 100%;
+
+}
+
+main .sec3{
+  display: flex;
+  flex-direction: row;
+  place-content: space-between;
+  width: 100%;
+  height: 30%;
+}
+
+main .sec3 div{
+  display: flex;
+  place-content: space-between;
+  width: 46%;
+  border-radius: 15px;
+    background-color: var(--bijela);
+  }
+main .sec3 .aktivniProjekti,
+main .sec3 .zahtjevi,
+main .sec1 .radnici{
+  display: grid;
+  grid-template-rows: repeat(4, 25%);
+  grid-template-columns: repeat(4, 25%);
+  overflow-x: hidden;
+
+}
+
+main .sec3 .aktivniProjekti p,
+main .sec3 .zahtjevi p,
+main .sec1 .radnici p{
+  color: var(--siva3);
+  font-size: 25px;
+  padding: 3% 0 0 10%;
+  grid-area: auto / 1 / auto / 5;
+}
+main .sec3 .aktivniProjekti .container-fluid,
+main .sec3 .zahtjevi .container-fluid,
+main .sec1 .radnici .container-fluid{
+  grid-area: 2 / 1 / 5 / 5;
+  width: 100%;
+  height: 145px;
+  display: flex;
+  flex-direction: column;
+  place-content: flex-start;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+main .sec3 .aktivniProjekti .container-fluid::-webkit-scrollbar,
+main .sec3 .zahtjevi .container-fluid::-webkit-scrollbar,
+main .sec1 .radnici .container-fluid::-webkit-scrollbar{
+  display: none;
+}
+main .sec3 .aktivniProjekti .container-fluid div,
+main .sec3 .zahtjevi .container-fluid div,
+main .sec1 .radnici .container-fluid div{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2%;
+  padding: 5px 0;
+}
+
+main .sec3 .aktivniProjekti .container-fluid div p,
+main .sec3 .zahtjevi .container-fluid div p,
+main .sec1 .radnici .container-fluid p{
+  width: 100%;
+  padding: 0;
+  margin: 0 0 0 5%;
+  color: var(--siva3);
+  border-radius: 15px;
+  font-size: 20px;
+}
+main .sec3 .aktivniProjekti .container-fluid .project:hover,
+main .sec3 .zahtjevi .container-fluid div:hover,
+main .sec1 .radnici .container-fluid div:hover{
+  background-color: var(--siva1);
+  cursor: pointer;
+}
+main .sec3 .zahtjevi .container-fluid div:hover i{
+  color: var(--plava);
+}
+main .sec3 .aktivniProjekti .container-fluid div .circle{
+  height: 12px;
+  width: 15px;
+  margin: 0 0 0 10%;
+  background-color: var(--zelena);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+main .sec1 .radnici .container-fluid div .aktivanRadnik,
+main .sec1 .radnici .container-fluid div .neaktivanRadnik{
+  height: 12px;
+  width: 14px;
+  margin: 0 0 0 10%;
+  background-color: var(--zelena);
+  border-radius: 50%;
+  display: inline-block;
+}
+main .sec1 .radnici .container-fluid div .aktivanRadnik{
+  background-color: var(--zelena);
+}
+
+main .sec1 .radnici .container-fluid div .neaktivanRadnik{
+  background-color: var(--crvena);
+}
+main .sec3 .zahtjevi .container-fluid div span{
+  height: 12px;
+  width: 15px;
+  margin: 0 0 0 15%;
+  background-color: var(--plava3);
+  border-radius: 50%;
+  display: inline-block;
+}
+.closeBtn:hover,
+.closeBtn:focus{
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+main .sec3 .zahtjevi .container-fluid div section,
+main .sec3 .aktivniProjekti .container-fluid div section{
+  width: 100%;
+  color: var(--siva3);
+  font-size: 20px;
+  margin-right: 2%;
+  display: flex;
+  place-content: space-between;
+}
+main .sec3 .aktivniProjekti .container-fluid .projectsModal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+main .sec3 .aktivniProjekti .container-fluid .projectsModal .projectsModal-content{
+  display: grid;
+  grid-template-rows: 10% 90%;
+  grid-template-columns: 100%;
+  background-color: white;
+  margin: 2% auto auto auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 70%;
+  height: 90%;
+  border-radius: 15px;
+}
+.projectsModal-content .modalHeader{
+  width: 100%;
+  color: var(--plava);
+  display: flex;
+  place-items: center;
+  place-content: space-between;
+  padding: 0 2% !important;
+}
+.projectsModal .projectsModal-content .modalMain{
+  display: grid !important;
+  grid-template-columns: repeat(2, 20%) repeat(6, 10%) !important;
+  grid-template-rows: repeat(5, 20%) !important;
+  height: 90%;
+  padding: 3%;
+  color: var(--siva3);
+  border-top: 2px solid var(--siva2);
+  border-bottom: 2px solid var(--siva2);
+  border-radius: 15px;
+
+}
+
+.projectsModal .projectsModal-content .modalMain div{
+  background-color: var(--siva1);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.projectsModal .projectsModal-content .modalMain div::-webkit-scrollbar{
+  display: none;
+}
+
+.projectsModal .projectsModal-content .modalMain .basics{
+  grid-area: 1 / 1 / 3 / 3;
+  height: 98%;
+  width: 98%;
+  margin: 1%;
+  padding: 3% 5%;
+  display: flex;
+  flex-direction: column;
+  place-items: flex-start;
+  color: var(--bijela);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: var(--narancasta);
+
+}
+.projectsModal .projectsModal-content .modalMain .employeeOnProject{
+  grid-area: 3 / 1 / 6 / 3;
+  height: 98%;
+  width: 98%;
+  margin: 1%;
+  display: flex;
+  flex-direction: column;
+  place-items: flex-start;
+  place-content: flex-start;
+}
+.projectsModal .projectsModal-content .modalMain .taskOnProject{
+  grid-area: 1 / 3 / 6 / 6;
+  height: 98%;
+  width: 98%;
+  margin: 1%;
+  display: flex;
+  overflow-y: scroll;
+  flex-direction: column;
+  place-items: flex-start;
+  place-content: flex-start;
+}
+
+.projectsModal .projectsModal-content .modalMain .taskOnProject .task,
+.projectsModal .projectsModal-content .modalMain .employeeOnProject .employee,
+.projectsModal .projectsModal-content .modalMain .timeOnProject .user{
+  padding: 5px 25px 5px 25px;
+  border-radius: 0;
+  border-bottom: 1px solid var(--siva3);
+}
+
+.projectsModal .projectsModal-content .modalMain .taskOnProject .task h5,
+.projectsModal .projectsModal-content .modalMain .employeeOnProject h5,
+.projectsModal .projectsModal-content .modalMain .timeOnProject .user .name{
+  color: var(--plava);
+}
+.projectsModal .projectsModal-content .modalMain .timeOnProject{
+  grid-area: 1 / 6 / 6 / 9;
+  height: 98%;
+  width: 98%;
+  margin: 1%;
+  display: flex;
+  overflow-y: scroll;
+  flex-direction: column;
+  place-items: flex-start;
+  place-content: flex-start;
+}
+
+.projectsModal .projectsModal-content .modalMain .timeOnProject .user{
+
+}
+
+
+@media screen and (max-width: 900px){
+    header{
+      left: 100px;
+      width: calc(100% - 150px);
+    }
+    main{
+      top: 150px;
+      height: calc(100% - 150px);
+    }
+}
+@media screen and (max-width: 1200px){
+  main{
+    left: 120px;
+    top: 110px;
+    width: calc(100% - 180px);
+    height: calc(100% - 130px);
+    flex-direction: column;
+  }
+  main .sec1{
+    width: 100%;
+    flex-direction: row;
+    height: 30%;
+  }
+  main .sec1 div{
+    width: 32%;
+    height: 100%;
+  }
+  main .sec2{
+    height: 67%;
+    width: 100%;
+  }
+  main .sec2 .pregled{
+    height: 60%;
+  }
+  main .sec3 {
+    height: 36%;
+  }
+}
+
+@media screen and (max-width: 1050px){
+  header form input{
+    width: 70% !important;
+  }
+  main{
+    left: 120px;
+    top: 130px;
+    width: calc(100% - 180px);
+    height: 185%;
+    padding-bottom: 5%;
+    flex-direction: column;
+    place-items: center;
+  }
+  main .sec1{
+    width: 100%;
+    flex-direction: column;
+    height: 60%;
+    place-items: center;
+
+  }
+  main .sec1 div{
+    width: 55%;
+    height: 30%;
+  }
+  main .sec2{
+    height: 38%;
+    width: 100%;
+  }
+  main .sec2 .pregled{
+    height: 60%;
+  }
+  main .sec3 {
+    height: 32%;
+  }
+  main .sec1 .danas,
+  main .sec1 .aktivnost,
+  main .sec1 .radnici,
+  main .sec2 .pregled,
+  main .sec2 .sec3 .aktivniProjekti,
+  main .sec2 .sec3 .zahtjevi{
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  main .sec1 .danas::-webkit-scrollbar,
+  main .sec1 .aktivnost::-webkit-scrollbar,
+  main .sec1 .radnici::-webkit-scrollbar,
+  main .sec2 .pregled::-webkit-scrollbar,
+  main .sec2 .sec3 .aktivniProjekti::-webkit-scrollbar,
+  main .sec2 .sec3 .zahtjevi::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px){
+  main{
+    left: 70px;
+    top: 130px;
+    width: calc(100% - 80px);
+    height: 180%;
+    flex-direction: column;
+    place-items: center;
+  }
+  main .sec1{
+    width: 100%;
+    flex-direction: column;
+    height: 48%;
+    place-items: center;
+
+  }
+  main .sec1 div{
+    width: 100%;
+    height: 32%;
+  }
+  main .sec2{
+    height: 50%;
+    width: 100%;
+  }
+  main .sec2 .pregled{
+    height: 60%;
+  }
+  main .sec3 {
+    height: 38%;
+
+  }
+  main .sec1 .danas,
+  main .sec1 .aktivnost,
+  main .sec1 .radnici,
+  main .sec2 .pregled,
+  main .sec2 .sec3 .aktivniProjekti,
+  main .sec2 .sec3 .zahtjevi{
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  main .sec1 .danas::-webkit-scrollbar,
+  main .sec1 .aktivnost::-webkit-scrollbar,
+  main .sec1 .radnici::-webkit-scrollbar,
+  main .sec2 .pregled::-webkit-scrollbar,
+  main .sec2 .sec3 .aktivniProjekti::-webkit-scrollbar,
+  main .sec2 .sec3 .zahtjevi::-webkit-scrollbar{
+    display: none;
+  }
+
+}
+@media screen and (max-height: 700px){
+  nav .w3-sidebar #span1,
+  nav .w3-sidebar #span2{
+    height: 0;
+  }
+
+}
+
+
