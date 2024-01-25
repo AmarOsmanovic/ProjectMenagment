@@ -52,7 +52,7 @@ app.use((req, res, next) => {
     }
 
     if (
-        userRole === 'uposlenik' || !userRole &&
+        (userRole === 'uposlenik' || !userRole) &&
         (req.path === '/stats' ||
             req.path.startsWith('edit/adminEdit/fetch') ||
             req.path.startsWith('edit/menagerEdit/fetch'))
@@ -65,7 +65,6 @@ app.use((req, res, next) => {
             additionalInfo: ' Nemate odgovarajuće dozvole za pristup ovoj stranici.',
           });
     }
-
     return next();
   } else {
     return res
